@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { JobService } from './service/job.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActiveJobsPipe } from './pipe/active.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { ActiveJobsPipe } from './pipe/active.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [JobService],
   bootstrap: [AppComponent]
