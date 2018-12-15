@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { JobItemComponent } from './job-item.component';
+import { MatCardModule } from '@angular/material';
 
 describe('JobItemComponent', () => {
   let component: JobItemComponent;
@@ -8,7 +8,12 @@ describe('JobItemComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JobItemComponent ]
+      declarations: [
+        JobItemComponent
+      ],
+      imports: [
+        MatCardModule
+      ]
     })
     .compileComponents();
   }));

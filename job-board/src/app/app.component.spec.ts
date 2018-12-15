@@ -1,23 +1,32 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import {ActiveJobsPipe} from './pipe/active.pipe';
-import {JobService} from './service/job.service';
-import {HttpClientModule} from '@angular/common/http';
+import { ActiveJobsPipe } from './pipe/active.pipe';
+import { JobService } from './service/job.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule, MatToolbarModule } from '@angular/material';
+import { JobDetailComponent } from './component/job-detail/job-detail.component';
+import { JobItemComponent } from './component/job-item/job-item.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+        MatToolbarModule,
+        MatCardModule,
+        FlexLayoutModule
       ],
       providers: [
         JobService,
       ],
       declarations: [
         AppComponent,
-        ActiveJobsPipe
+        ActiveJobsPipe,
+        JobItemComponent,
+        JobDetailComponent
       ],
     }).compileComponents();
   }));
