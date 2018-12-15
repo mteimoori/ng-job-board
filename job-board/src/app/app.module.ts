@@ -6,19 +6,26 @@ import { JobService } from './service/job.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActiveJobsPipe } from './pipe/active.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatToolbarModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { JobItemComponent } from './component/job-item/job-item.component';
+import { JobDetailComponent } from './component/job-detail/job-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ActiveJobsPipe
+    ActiveJobsPipe,
+    JobItemComponent,
+    JobDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [JobService],
   bootstrap: [AppComponent]
