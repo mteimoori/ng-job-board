@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { ActiveJobsPipe } from './pipe/active.pipe';
 import { JobService } from './service/job.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MatCardModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { JobDetailComponent } from './component/job-detail/job-detail.component';
 import { JobItemComponent } from './component/job-item/job-item.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -17,7 +17,8 @@ describe('AppComponent', () => {
         HttpClientModule,
         MatToolbarModule,
         MatCardModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        MatIconModule
       ],
       providers: [
         JobService,

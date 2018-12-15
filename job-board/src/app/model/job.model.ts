@@ -15,6 +15,9 @@ export class Job {
     public createdAt: Date
   ) {}
 
+  get location() {
+    return `${this.zipCode}, ${this.city}`;
+  }
 }
 
 export class Category {

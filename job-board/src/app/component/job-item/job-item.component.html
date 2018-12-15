@@ -1,3 +1,20 @@
 <mat-card class="job-item">
-  <h1>{{ job?.title }}</h1>
+  <div class="job-thumb">
+    <img src="{{ job?.thumbnail }}" alt="{{ job?.title }}">
+  </div>
+  <div class="job-info">
+    <div class="job-title">
+      <h2 class="title">{{ job?.title }}</h2>
+    </div>
+    <div class="job-location">
+      <mat-icon class="icon">location_on</mat-icon>
+      <span class="text">{{ job?.location }}</span>
+    </div>
+    <div class="dates">
+      <mat-icon class="icon">calendar_today</mat-icon>
+      <span class="text">{{ job?.createdAt | date: 'dd.MM.yy' }} - {{ job?.endDate | date: 'dd.MM.yy' }}</span>
+    </div>
+  </div>
+
+
 </mat-card>
