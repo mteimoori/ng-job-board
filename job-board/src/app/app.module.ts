@@ -6,7 +6,7 @@ import { JobService } from './service/job.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ActiveJobsPipe } from './pipe/active.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { JobItemComponent } from './component/job-item/job-item.component';
 import { JobDetailComponent } from './component/job-detail/job-detail.component';
@@ -26,7 +26,8 @@ import { JobDetailComponent } from './component/job-detail/job-detail.component'
     MatToolbarModule,
     MatCardModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [JobService],
   bootstrap: [AppComponent]

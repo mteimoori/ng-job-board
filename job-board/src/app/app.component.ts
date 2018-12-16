@@ -11,11 +11,22 @@ import { Job } from './model/job.model';
 export class AppComponent implements OnInit {
   jobs: Job[];
   public title = 'Job Board';
+  public selectedJob;
+  public detailEnabled: boolean = false;
 
   constructor(private jobService: JobService) {
   }
 
   ngOnInit() {
-    this.jobService.list().subscribe((jobs: Job[]) => this.jobs = jobs);
+    this.jobService.list().subscribe((jobs: Job[]) => {
+      this.jobs = jobs;
+      this.selectedJob = this.jobs[0];
+    });
+
+  }
+
+  selectJob(job: Job) {
+    this.detailEnabled = true;
+    this.selectedJob = job;
   }
 }

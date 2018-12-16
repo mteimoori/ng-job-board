@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Job } from '../../model/job.model';
 
 @Component({
@@ -7,11 +7,14 @@ import { Job } from '../../model/job.model';
   styleUrls: ['./job-item.component.scss']
 })
 export class JobItemComponent implements OnInit {
-  @Input() public job: Job;
-
+  @Input() job: Job;
+  @Output() jobEvent = new EventEmitter<Job>();
   constructor() { }
 
   ngOnInit() {
   }
 
+  onClickJobItem(event) {
+    this.jobEvent.emit(event);
+  }
 }

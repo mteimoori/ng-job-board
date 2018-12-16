@@ -1,3 +1,38 @@
-<p>
-  job-detail works!
-</p>
+<div class="job-detail">
+  <h5>{{ selectedJob?.title }}</h5>
+  <table>
+    <tr>
+      <th>Job Description</th>
+      <td>{{ selectedJob?.description }}</td>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <td>{{ selectedJob?.location }}</td>
+    </tr>
+    <tr>
+      <th>Created At</th>
+      <td>{{ selectedJob?.createdAt | date:'dd MMMM yyyy HH:mm:ss' }}</td>
+    </tr>
+    <tr>
+      <th>End Date</th>
+      <td>{{ selectedJob?.endDate | date:'dd MMMM yyyy' }}</td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td>
+        <span class="category-tag" *ngFor="let category of selectedJob?.categories">{{ category.id }}</span>
+      </td>
+    </tr>
+    <tr>
+      <th>Messages</th>
+      <td>Total: {{ selectedJob?.counter.messagesTotal }} / Unread: {{ selectedJob?.counter.messagesUnread }}</td>
+    </tr>
+    <tr *ngIf="selectedJob?.attachments.length">
+      <th>Attachments</th>
+      <td>
+        <span class="attachment" *ngFor="let attachment of selectedJob?.attachments" [ngStyle]="{'background-image': 'url(' + attachment + ')'}"></span>
+      </td>
+    </tr>
+  </table>
+</div>
+

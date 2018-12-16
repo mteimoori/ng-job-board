@@ -1,15 +1,15 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="header" color="primary">
   <span>Job Board</span>
 </mat-toolbar>
-<h1>{{ title }}</h1>
-
+<button class="return-btn" mat-button="primary" *ngIf="detailEnabled" (click)="detailEnabled = false">
+  <mat-icon>keyboard_backspace</mat-icon>Back to list</button>
 <div class="container">
   <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex>
-    <div fxFlex="40%" class="list-wrapper">
-      <app-job-item *ngFor="let job of (jobs | activeJobs)" [job]="job"></app-job-item>
+    <div fxFlex="40%" [ngClass]="{active: !detailEnabled}" class="list-wrapper">
+      <app-job-item *ngFor="let job of (jobs | activeJobs)" [job]="job" (jobEvent)="selectJob($event)"></app-job-item>
     </div>
-    <div fxFlex="60%" class="job-detail-wrapper">
-      <app-job-detail></app-job-detail>
+    <div fxFlex="60%" [ngClass]="{active: detailEnabled}"  class="job-detail-wrapper">
+      <app-job-detail [selectedJob]="selectedJob" ></app-job-detail>
     </div>
   </div>
 </div>

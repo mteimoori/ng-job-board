@@ -1,0 +1,24 @@
+@import "../assets/sass/variables";
+.container {
+  padding: 16px;
+}
+.header {
+  box-shadow: $container-shadow;
+}
+.list-wrapper,
+.job-detail-wrapper {
+  @media (max-width: $breakpoint) {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+}
+.return-btn {
+  display: none;
+  margin: 10px 0 0 10px;
+  @media (max-width: $breakpoint) {
+    display: block;
+  }
+}
+

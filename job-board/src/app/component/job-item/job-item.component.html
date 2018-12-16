@@ -1,4 +1,4 @@
-<mat-card class="job-item">
+<mat-card class="job-item" (click)="onClickJobItem(job)">
   <div class="job-thumb">
     <img src="{{ job?.thumbnail }}" alt="{{ job?.title }}">
   </div>

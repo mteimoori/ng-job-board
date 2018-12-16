@@ -1,19 +1,21 @@
-$breakpoint: 760px;
-$color-icon: #cacaca;
-$color-title: #444444;
+@import '../../../assets/sass/variables';
 .job-item {
   display: flex;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  box-shadow: $container-shadow;
   font-family: 'Open Sans', sans-serif;
   user-select: none;
+  cursor: pointer;
+  @media (max-width: $breakpoint) {
+    margin-bottom: 10px;
+  }
   .job-thumb {
     flex-shrink: 0;
     width: 150px;
     height: 150px;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: $image-shadow;
     img {
       width: 100%;
     }
