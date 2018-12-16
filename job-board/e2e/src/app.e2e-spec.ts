@@ -5,10 +5,18 @@ describe('workspace-project App', () => {
 
   beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to job-board!');
+  it('should display first job item by default', () => {
+    expect(page.getNthJobItemTitle(1)).toEqual(page.getJobDetailTitle());
   });
+
+  it('should display the details for the selected job item', () => {
+    const jobItem = page.getNthJobItem(2);
+    jobItem.click().then(() => {
+      expect(page.getNthJobItemTitle(2)).toEqual(page.getJobDetailTitle());
+    });
+  });
+
 });
